@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
     }
 
     const activity = await db.activity.findUnique({
-      where: { activityId: String(activityId)},
+      where: { activityId: parseInt(activityId)},
       include: {
         operator: true,
       },
