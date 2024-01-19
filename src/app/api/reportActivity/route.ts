@@ -2,17 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import { db } from "~/server/db";
 
 
-type Activity = {
-  apiKey: string;
-  activityName: string;
-  gravity: number;
-  timestamp: string;
-  operatorName: string;
-}
+
 
 export async function POST(request: NextRequest) {
   // const { nameLookup }: any = await request.json();
-  const activity : Activity = await request.json();
+  const activity  = await request.json();
   
 
   activity.timestamp = new Date(activity.timestamp);

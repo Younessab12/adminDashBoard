@@ -2,12 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { db } from "~/server/db";
 
 
-type Activity = {
-  timestamp: string,
-  operatorId: string,
-  activityName: string,
-  gravity: string
-}
 
 export async function GET(request: NextRequest) {
   try{

@@ -1,14 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "~/server/db";
 
-type Activity = {
-  apiKey: string;
-  operatorName: string;
-}
 
 export async function POST(request: NextRequest) {
   // const { nameLookup }: any = await request.json();
-  const activity : Activity = await request.json();
+  const activity = await request.json();
   
   if (!activity?.apiKey || !activity.operatorName) {
     return new NextResponse(
