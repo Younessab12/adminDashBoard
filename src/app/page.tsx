@@ -37,12 +37,12 @@ export default function HomePage() {
   }, [])
 
   return (
-    <main className="text-center flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white pb-6">
+    <main className="text-center flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white pb-6 min-w-full">
       <h1 className="text-4xl font-bold mt-10">Admin Dashboard</h1>
       {/* {typeof(lastRefresh) == String ? lastRefresh : lastRefresh.toISOString()} */}
       {lastRefresh}
       <div className='mb-8'></div>
-      <div className='flex gap-24 '>
+      <div className='md:flex gap-24 grid  '>
 
       <div className='text-left mt-5 px-6 py-4 bg-gray-100 w-[16rem] text-black rounded-2xl shadow-xl h-full'>
         <h3 className='flex justify-center items-center pt-2 pb-2'>Operators Live</h3>
@@ -72,16 +72,16 @@ export default function HomePage() {
         <td className="px-6 py-4 whitespace-nowrap text-sm font-bold flex justify-center">
           Time
         </td>
-        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold ">
+        <td className="px-6 py-4 whitespace-nowrap xl:text-sm text-xs font-bold ">
           Operator Name
         </td>
-        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold">
+        <td className="px-6 py-4 whitespace-nowrap xl:text-sm text-xs font-bold">
           Activity
         </td>
-        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold">
+        <td className="px-6 py-4 whitespace-nowrap xl:text-sm text-xs font-bold">
           Gravity
         </td>
-        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold">
+        <td className="px-6 py-4 whitespace-nowrap xl:text-sm text-xs font-bold">
           Raspberry
         </td>
     
@@ -89,19 +89,19 @@ export default function HomePage() {
           rows.map(
             (row) => { return (row.operator.operatorName.toUpperCase()==="UNKNOWN"?<div></div>:
             <tr>
-              <td className="px-6 py-4 whitespace-nowrap text-sm ">
+              <td className="px-6 py-4 whitespace-nowrap xl:text-sm text-xs ">
                 {row.timestamp}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm ">
+              <td className="px-6 py-4 whitespace-nowrap xl:text-sm text-xs ">
                 {row.operator.operatorName}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm ">
+              <td className="px-6 py-4 whitespace-nowrap xl:text-sm text-xs">
                 {row.activityName}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm ">
+              <td className="px-6 py-4 whitespace-nowrap xl:text-sm text-xs ">
                 {row.gravity}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm ">
+              <td className="px-6 py-4 whitespace-nowrap xl:text-sm text-xs ">
                 {row.raspberryName}
               </td>
               </tr>)}
